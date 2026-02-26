@@ -39,16 +39,22 @@ Front-end test assessment implementation for a Recipe Finder application using N
 - `app/recipes/page.tsx` - SSR recipes list page
 - `app/recipes/[id]/page.tsx` - SSR recipe details page
 - `lib/spoonacular.ts` - server API fetch utilities and cache settings
-- `.env.local` - environment variables
+- `.env.example` - environment variable template
 
 ## Environment Variables
 
-This repo includes `.env.local` (as requested for the assessment).
+For security, `.env.local` is not committed. Use `.env.example` as a template.
 
-Set your Spoonacular key in `.env.local`:
+Create `.env.local` in the project root:
 
 ```bash
-SPOONACULAR_API_KEY=your_spoonacular_api_key_here
+cp .env.example .env.local
+```
+
+Then set your Spoonacular key:
+
+```bash
+SPOONACULAR_API_KEY=your_new_spoonacular_api_key
 ```
 
 You can get a key from: https://spoonacular.com/food-api/docs#Authentication

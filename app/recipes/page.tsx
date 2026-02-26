@@ -232,25 +232,43 @@ function RecipesFallback() {
 export default async function RecipesPage({ searchParams }: RecipesPageProps) {
   const { page, ...filters } = normalizeSearchParams(await searchParams);
   const activeFilters = [
-    filters.query ? `query: ${filters.query}` : null,
-    filters.cuisine ? `cuisine: ${filters.cuisine}` : null,
-    filters.diet ? `diet: ${filters.diet}` : null,
-    filters.mealType ? `meal type: ${filters.mealType}` : null,
-    filters.includeIngredients ? `ingredients: ${filters.includeIngredients}` : null,
-    filters.maxReadyTime ? `max prep: ${filters.maxReadyTime} min` : null,
-  ].filter(Boolean) as string[];
+    filters.query ? { label: "Query", value: filters.query } : null,
+    filters.cuisine ? { label: "Cuisine", value: filters.cuisine } : null,
+    filters.diet ? { label: "Diet", value: filters.diet } : null,
+    filters.mealType ? { label: "Meal type", value: filters.mealType } : null,
+    filters.includeIngredients
+      ? { label: "Ingredients", value: filters.includeIngredients }
+      : null,
+    filters.maxReadyTime
+      ? { label: "Max prep", value: `${filters.maxReadyTime} min` }
+      : null,
+  ].filter(Boolean) as Array<{ label: string; value: string }>;
 
   return (
     <main className="mx-auto min-h-screen w-full max-w-6xl px-4 py-10 sm:px-6">
-      <div className="mb-6 flex flex-wrap items-center gap-3 text-sm text-[var(--muted)]">
+      <div className="mb-6 flex flex-wrap items-center gap-3 text-sm">
         <Link
           href="/"
           className="font-medium text-[#31543d] underline-offset-4 hover:underline"
         >
           Back to search
         </Link>
-        <span>|</span>
-        <p>Filters: {activeFilters.length ? activeFilters.join(" | ") : "-"}</p>
+        <span className="hidden text-[#a2ab98] sm:inline">|</span>
+        <p className="font-medium text-[#415844]">Active filters</p>
+        {activeFilters.length ? (
+          <div className="flex flex-1 flex-wrap items-center gap-2">
+            {activeFilters.map((filter) => (
+              <span
+                key={`${filter.label}:${filter.value}`}
+                className="inline-flex items-center rounded-full border border-[#cfe0d4] bg-[#eef4ea] px-3 py-1 text-xs font-medium text-[#2d4a35]"
+              >
+                {filter.label}: {filter.value}
+              </span>
+            ))}
+          </div>
+        ) : (
+          <span className="text-[var(--muted)]">None</span>
+        )}
       </div>
 
       <h1 className="mb-6 text-3xl font-semibold text-[#1f2e1f]">Recipes</h1>
