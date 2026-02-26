@@ -97,11 +97,11 @@ npm run start
 
 ## Screenshots / Screencast
 
-Add screenshots or screencast links in this section before sharing the repository.
+Search page:
 
-- Search page:
-- Recipes list page:
-- Recipe details page:
+Recipes list page:
+
+Recipe details page:
 
 ## Notes
 
