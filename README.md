@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Recipe Finder App (Next.js)
 
-## Getting Started
+Front-end test assessment implementation for a Recipe Finder application using Next.js App Router, Tailwind CSS, SSR, and Spoonacular API.
 
-First, run the development server:
+## Features
+
+- Search form on `/` with:
+  - recipe query
+  - cuisine dropdown (full Spoonacular cuisine list)
+  - diet dropdown
+  - meal type dropdown
+  - include ingredients input
+  - max preparation time in minutes
+- `Next` button is disabled until at least one field is filled.
+- Navigation to `/recipes` with URL query params.
+- Server-side recipe fetching on `/recipes` using Spoonacular `complexSearch` endpoint.
+- API response caching for 1 minute (`revalidate: 60`).
+- Pagination on recipes page (9 cards per page, 27 fetched results total).
+- Recipe cards (title + image) linking to `/recipes/[id]`.
+- Recipe details page with:
+  - title
+  - ingredients list
+  - ready time and servings
+- Suspense-based loading fallbacks on list and details pages.
+- Error handling UI for failed API requests.
+- ESLint + Prettier configuration.
+
+## Tech Stack
+
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS 4
+- TypeScript
+
+## Project Structure
+
+- `app/page.tsx` - search page (home)
+- `app/components/` - reusable UI components for form and select controls
+- `app/recipes/page.tsx` - SSR recipes list page
+- `app/recipes/[id]/page.tsx` - SSR recipe details page
+- `lib/spoonacular.ts` - server API fetch utilities and cache settings
+- `.env.local` - environment variables
+
+## Environment Variables
+
+This repo includes `.env.local` (as requested for the assessment).
+
+Set your Spoonacular key in `.env.local`:
+
+```bash
+SPOONACULAR_API_KEY=your_spoonacular_api_key_here
+```
+
+You can get a key from: https://spoonacular.com/food-api/docs#Authentication
+
+## Run Locally
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+- `npm run dev` - run development server
+- `npm run build` - production build
+- `npm run start` - run production server
+- `npm run lint` - run ESLint
+- `npm run format` - check Prettier formatting
+- `npm run format:write` - apply Prettier formatting
 
-To learn more about Next.js, take a look at the following resources:
+## Build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Screenshots / Screencast
 
-## Deploy on Vercel
+Add screenshots or screencast links in this section before sharing the repository.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Search page:
+- Recipes list page:
+- Recipe details page:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+
+- Spoonacular free tier has rate limits.
+- If API key is missing or invalid, the app shows a user-friendly error block on server-rendered pages.
