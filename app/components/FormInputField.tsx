@@ -26,7 +26,7 @@ export function FormInputField({
         type={type}
         min={min}
         placeholder={placeholder}
-        className="h-11 rounded-lg border border-[#c8ccb7] bg-white px-3 text-sm outline-none transition focus:border-[var(--accent)] focus:ring-2 focus:ring-[#cfe7db]"
+        className="h-11 rounded-lg border border-[#c8ccb7] bg-white px-3 text-sm outline-none transition focus:border-(--accent) focus:ring-2 focus:ring-[#cfe7db]"
       />
     </label>
   );

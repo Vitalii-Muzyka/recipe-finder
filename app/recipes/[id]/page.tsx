@@ -42,7 +42,7 @@ async function RecipeDetails({ id }: { id: string }) {
     <article className="rounded-2xl border border-[#d6dccf] bg-white p-6 shadow-[0_12px_30px_rgba(38,62,44,0.08)] sm:p-8">
       <h1 className="text-3xl font-semibold text-[#1f2e1f]">{recipe.title}</h1>
 
-      <div className="mt-3 flex flex-wrap gap-2 text-sm text-[var(--muted)]">
+      <div className="mt-3 flex flex-wrap gap-2 text-sm text-(--muted)">
         <span className="rounded-full bg-[#edf2ea] px-3 py-1">
           Ready in {recipe.readyInMinutes} min
         </span>

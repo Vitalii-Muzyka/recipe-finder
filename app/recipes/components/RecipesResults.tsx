@@ -52,7 +52,7 @@ export async function RecipesResults({
 }: RecipesResultsProps) {
   if (!hasFilters(filters)) {
     return (
-      <div className="rounded-xl border border-[#d8dac8] bg-white p-6 text-sm text-[var(--muted)]">
+      <div className="rounded-xl border border-[#d8dac8] bg-white p-6 text-sm text-(--muted)">
         No filters were provided. Go back and enter at least one filter.
       </div>
     );
@@ -79,7 +79,7 @@ export async function RecipesResults({
 
   if (!recipes.length) {
     return (
-      <div className="rounded-xl border border-[#d8dac8] bg-white p-6 text-sm text-[var(--muted)]">
+      <div className="rounded-xl border border-[#d8dac8] bg-white p-6 text-sm text-(--muted)">
         No recipes found for your filters.
       </div>
     );

@@ -10,7 +10,7 @@ export default function HomePage() {
         <h1 className="text-balance text-3xl font-semibold text-[#202f20] sm:text-5xl">
           Discover recipes that match your cravings
         </h1>
-        <p className="mx-auto mt-3 max-w-2xl text-sm text-[var(--muted)] sm:text-base">
+        <p className="mx-auto mt-3 max-w-2xl text-sm text-(--muted) sm:text-base">
           Fill any combination of query, cuisine, diet, meal type, ingredients, and
           max preparation time.
         </p>

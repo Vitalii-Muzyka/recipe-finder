@@ -32,7 +32,7 @@ export function ActiveFiltersBar({ filters }: ActiveFiltersBarProps) {
           ))}
         </div>
       ) : (
-        <span className="text-[var(--muted)]">None</span>
+        <span className="text-(--muted)">None</span>
       )}
     </div>
   );

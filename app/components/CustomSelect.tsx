@@ -41,7 +41,7 @@ export function CustomSelect({
         aria-controls={listId}
         aria-expanded={isOpen}
         onClick={() => setIsOpen((current) => !current)}
-        className="flex h-11 w-full items-center justify-between rounded-lg border border-[#c8ccb7] bg-white px-3 text-sm text-left outline-none transition focus:border-[var(--accent)] focus:ring-2 focus:ring-[#cfe7db]"
+        className="flex h-11 w-full items-center justify-between rounded-lg border border-[#c8ccb7] bg-white px-3 text-sm text-left outline-none transition focus:border-(--accent) focus:ring-2 focus:ring-[#cfe7db]"
       >
         <span>{value || placeholder}</span>
         <svg
