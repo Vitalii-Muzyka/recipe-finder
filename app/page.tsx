@@ -11,8 +11,8 @@ export default function HomePage() {
           Discover recipes that match your cravings
         </h1>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-(--muted) sm:text-base">
-          Fill any combination of query, cuisine, diet, meal type, ingredients, and
-          max preparation time.
+          Fill any combination of query, cuisine, diet, meal type, ingredients, and max
+          preparation time.
         </p>
       </div>
 

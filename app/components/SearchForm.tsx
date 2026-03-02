@@ -2,11 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import {
-  CUISINE_OPTIONS,
-  DIET_OPTIONS,
-  MEAL_TYPE_OPTIONS,
-} from "./constants";
+import { CUISINE_OPTIONS, DIET_OPTIONS, MEAL_TYPE_OPTIONS } from "./constants";
 import { FormInputField } from "./FormInputField";
 import { FormSelectField } from "./FormSelectField";
 
@@ -69,7 +65,7 @@ export function SearchForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="w-full max-w-2xl rounded-2xl border border-[#d9dbc9] bg-[var(--panel)] p-6 shadow-[0_16px_40px_rgba(35,52,35,0.08)] sm:p-8"
+      className="w-full max-w-2xl rounded-2xl border border-[#d9dbc9] bg-(--panel) p-6 shadow-[0_16px_40px_rgba(35,52,35,0.08)] sm:p-8"
       aria-label="Recipe search form"
     >
       <div className="grid gap-5 sm:grid-cols-2">
@@ -126,7 +122,7 @@ export function SearchForm() {
       <button
         type="submit"
         disabled={!canProceed}
-        className="mt-6 inline-flex h-11 items-center justify-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:bg-[var(--accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#95cfb0] disabled:cursor-not-allowed disabled:bg-[#b4beac]"
+        className="mt-6 inline-flex h-11 items-center justify-center rounded-lg bg-(--accent) px-5 text-sm font-semibold text-white transition hover:bg-(--accent-strong) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#95cfb0] disabled:cursor-not-allowed disabled:bg-[#b4beac]"
       >
         Next
       </button>

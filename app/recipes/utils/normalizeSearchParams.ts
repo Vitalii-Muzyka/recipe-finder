@@ -1,16 +1,14 @@
 import { RecipeSearchFilters } from "@/lib/spoonacular";
 
-export function normalizeSearchParams(
-  params: {
-    query?: string;
-    cuisine?: string;
-    diet?: string;
-    mealType?: string;
-    includeIngredients?: string;
-    maxReadyTime?: string;
-    page?: string;
-  },
-): RecipeSearchFilters & { page: number } {
+export function normalizeSearchParams(params: {
+  query?: string;
+  cuisine?: string;
+  diet?: string;
+  mealType?: string;
+  includeIngredients?: string;
+  maxReadyTime?: string;
+  page?: string;
+}): RecipeSearchFilters & { page: number } {
   const parsedPage = Number(params.page);
   const page = Number.isFinite(parsedPage) && parsedPage > 0 ? Math.floor(parsedPage) : 1;
 

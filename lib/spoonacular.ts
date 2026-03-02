@@ -15,13 +15,30 @@ type Ingredient = {
   original: string;
 };
 
-type RecipeDetailsResponse = {
+type InstructionStep = {
+  number: number;
+  step: string;
+};
+
+type InstructionSection = {
+  name: string;
+  steps: InstructionStep[];
+};
+
+export type RecipeDetailsResponse = {
   id: number;
   title: string;
+  image: string;
   readyInMinutes: number;
   servings: number;
   summary: string;
+  healthScore: number;
+  pricePerServing: number;
+  dishTypes: string[];
+  diets: string[];
+  cuisines: string[];
   extendedIngredients: Ingredient[];
+  analyzedInstructions: InstructionSection[];
 };
 
 export type RecipeSearchFilters = {

@@ -18,9 +18,12 @@ Front-end test assessment implementation for a Recipe Finder application using N
 - Pagination on recipes page (9 cards per page, 27 fetched results total).
 - Recipe cards (title + image) linking to `/recipes/[id]`.
 - Recipe details page with:
-  - title
-  - ingredients list
-  - ready time and servings
+  - hero image, title, ready time, servings
+  - summary, instructions, and recipe metadata badges
+  - interactive ingredients checklist
+  - `Copy ingredients` and `Clear selected` actions
+  - localStorage persistence for selected ingredients per recipe
+  - back navigation to `/recipes` with preserved filters and page
 - Suspense-based loading fallbacks on list and details pages.
 - Error handling UI for failed API requests.
 - ESLint + Prettier configuration.
@@ -36,8 +39,11 @@ Front-end test assessment implementation for a Recipe Finder application using N
 
 - `app/page.tsx` - search page (home)
 - `app/components/` - reusable UI components for form and select controls
-- `app/recipes/page.tsx` - SSR recipes list page
-- `app/recipes/[id]/page.tsx` - SSR recipe details page
+- `app/recipes/page.tsx` - SSR recipes list route composition
+- `app/recipes/components/` - recipes list UI sections (filters bar, grid, pagination, fallback, results)
+- `app/recipes/utils/` - recipes-specific utility functions
+- `app/recipes/[id]/page.tsx` - SSR recipe details route composition
+- `app/recipes/[id]/components/` - recipe details UI sections and ingredients checklist
 - `lib/spoonacular.ts` - server API fetch utilities and cache settings
 - `.env.example` - environment variable template
 

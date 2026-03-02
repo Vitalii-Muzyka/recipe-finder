@@ -48,7 +48,7 @@ export function RecipesPagination({
           key={pageLink.page}
           href={pageLink.href}
           aria-current={pageLink.isActive ? "page" : undefined}
-          className={`inline-flex h-[38px] w-[38px] items-center justify-center rounded-md border transition ${
+          className={`inline-flex h-9.5 w-9.5 items-center justify-center rounded-md border transition ${
             pageLink.isActive
               ? "border-[#7aa88b] bg-[#dcefe3] text-[#274033]"
               : "border-[#c6cdbf] bg-white text-[#2f4a36] hover:bg-[#eef4ea]"

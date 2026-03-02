@@ -11,11 +11,11 @@ type RecipesResultsProps = {
 function hasFilters(filters: RecipeSearchFilters) {
   return Boolean(
     filters.query ||
-      filters.cuisine ||
-      filters.diet ||
-      filters.mealType ||
-      filters.includeIngredients ||
-      filters.maxReadyTime,
+    filters.cuisine ||
+    filters.diet ||
+    filters.mealType ||
+    filters.includeIngredients ||
+    filters.maxReadyTime,
   );
 }
 
@@ -101,10 +101,13 @@ export async function RecipesResults({
       isActive: page === safeCurrentPage,
     };
   });
+  const detailsQuery = new URLSearchParams(
+    buildRecipesUrl(filters, safeCurrentPage).replace("/recipes?", ""),
+  ).toString();
 
   return (
     <div className="space-y-6">
-      <RecipesGrid recipes={paginatedRecipes} />
+      <RecipesGrid recipes={paginatedRecipes} detailsQuery={detailsQuery} />
 
       {totalPages > 1 ? (
         <RecipesPagination
