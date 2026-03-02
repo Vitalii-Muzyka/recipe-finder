@@ -94,6 +94,22 @@ http://localhost:3000
 - `npm run format` - check Prettier formatting
 - `npm run format:write` - apply Prettier formatting
 
+## CI (GitHub Actions)
+
+Workflow file: `.github/workflows/ci.yml`
+
+Runs automatically on:
+
+- `push` to `main`
+- `pull_request` targeting `main`
+
+Checks executed in CI:
+
+- `npm ci`
+- `npm run lint`
+- `npm run format`
+- `npm run build`
+
 ## Build
 
 ```bash
